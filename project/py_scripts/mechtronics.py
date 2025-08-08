@@ -1,9 +1,59 @@
 import time
 from machine import Pin, PWM
 from servo import Servo
+from machine import RTC
 
 servo_pwmL = PWM(Pin(16))
 servo_pwmR = PWM(Pin(15))
 
-my_servo = Servo(pwm=servo_pwmL)
-my_servo2 = Servo(pwm=servo_pwmR)
+freq = 50
+min_us = 500
+max_us = 2500
+dead_zone_us = 1500
+
+my_servo = Servo(
+    pwm=servo_pwmL, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq
+    )
+my_servo2 = Servo(
+    pwm=servo_pwmR, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq
+    )
+
+def Forward():
+    my_servo.set_duty(500)
+    my_servo2.set_duty(2500)
+    time.sleep(2)
+
+    my_servo.stop()
+    my_servo2.stop()
+    time.sleep(2)
+    Forward()
+
+def Backward():
+    my_servo.set_duty(2500)
+    my_servo2.set_duty(500)
+    time.sleep(2)
+
+    my_servo.stop()
+    my_servo2.stop()
+    time.sleep(2)
+    Backward()
+
+def Left():
+    my_servo.set_duty(2500)
+    my_servo2.set_duty(2500)
+    time.sleep(2)
+
+    my_servo.stop()
+    my_servo2.stop()
+    time.sleep(2)
+    Left()
+
+def Right():
+    my_servo.set_duty(500)
+    my_servo2.set_duty(500)
+    time.sleep(2)
+
+    my_servo.stop()
+    my_servo2.stop()
+    time.sleep(2)
+    Right()

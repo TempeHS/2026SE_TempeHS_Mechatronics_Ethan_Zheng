@@ -29,6 +29,7 @@ my_servo = Servo(
 )
 
 
+
 while True:
     # Set the Servo to the mid-point (90 is half way between zero and 180 degrees)
     my_servo.set_angle(0)
