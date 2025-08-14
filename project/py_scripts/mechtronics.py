@@ -22,42 +22,28 @@ my_servo2 = Servo(
     pwm=servo_pwmR, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq
     )
 
+def stop():
+    #stop
+    stop()
+
 def Forward():
     my_servo.set_duty(500)
     my_servo2.set_duty(2500)
     time.sleep(2)
-
-    my_servo.stop()
-    my_servo2.stop()
-    time.sleep(2)
-    Forward()
 
 def Backward():
     my_servo.set_duty(2500)
     my_servo2.set_duty(500)
     time.sleep(2)
 
-    my_servo.stop()
-    my_servo2.stop()
-    time.sleep(2)
-    Backward()
-
 def Left():
     my_servo.set_duty(2500)
     my_servo2.set_duty(2500)
     time.sleep(2)
 
-    my_servo.stop()
-    my_servo2.stop()
-    time.sleep(2)
-    Left()
 
 def Right():
     my_servo.set_duty(500)
     my_servo2.set_duty(500)
     time.sleep(2)
 
-    my_servo.stop()
-    my_servo2.stop()
-    time.sleep(2)
-    Right()
