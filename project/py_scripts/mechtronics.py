@@ -3,6 +3,10 @@ from machine import Pin, PWM
 from servo import Servo
 from machine import RTC
 
+"""
+Make a class
+"""
+
 servo_pwmL = PWM(Pin(16))
 servo_pwmR = PWM(Pin(15))
 
