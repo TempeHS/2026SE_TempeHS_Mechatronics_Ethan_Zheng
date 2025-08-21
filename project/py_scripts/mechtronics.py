@@ -41,12 +41,12 @@ class MechMovement:
     def move_backward(self):
         self.left_motor.set_duty(500)  
         self.right_motor.set_duty(2500)  
-        print("Moving forward")
+        print("Reverse")
     
     def move_forward(self): 
         self.left_motor.set_duty(2500)
         self.right_motor.set_duty(500)
-        print("Reverse")
+        print("Moving forward")
     
 
     def turn_right(self):
