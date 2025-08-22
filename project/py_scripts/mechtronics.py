@@ -62,16 +62,16 @@ class MechMovement:
 if __name__ == "__main__":
     robot = MechMovement()
     
-    #robot.move_backward()
-    #time.sleep(1)
+    robot.move_backward()
+    time.sleep(1)
     
     robot.turn_right()
     time.sleep(0.9)
     
-    #robot.move_forward() 
-    #time.sleep(1)
+    robot.move_forward() 
+    time.sleep(1)
 
-    #robot.turn_left()
-    #time.sleep(0.9)
+    robot.turn_left()
+    time.sleep(0.9)
     
     robot.stop()
